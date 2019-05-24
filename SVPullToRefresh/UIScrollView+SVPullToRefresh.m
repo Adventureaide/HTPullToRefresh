@@ -538,7 +538,7 @@ static char UIScrollViewInternalPullToRefreshViews;
         switch (self.position) {
             case SVPullToRefreshPositionTop:
                 offset = MAX(self.scrollView.contentOffset.y * -1, 0.0f);
-                offset = MIN(offset, self.originalTopInset + self.bounds.size.height);
+                offset = MIN(offset, self.originalTopInset + self.topGapInset + self.bounds.size.height);
                 contentInset = self.scrollView.contentInset;
                 self.scrollView.contentInset = UIEdgeInsetsMake(offset, contentInset.left, contentInset.bottom, contentInset.right);
                 break;
